@@ -29,7 +29,7 @@
     // gMoveNumber = 1000;
     
     ViewController *myViewController = [[ViewController alloc]init];
-    NSString *identifier = [myViewController identifier];
+//    NSString *identifier = [myViewController identifier];
     
     return YES;
 }

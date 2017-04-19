@@ -7,23 +7,19 @@
 //
 
 #import "AddEmployeeViewController.h"
+#import "Employee.h"
+#import "EmployeeDataBase.h"
+
 
 @interface AddEmployeeViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *firstName;
-@property (weak, nonatomic) IBOutlet UILabel *lastName;
-@property (weak, nonatomic) IBOutlet UILabel *age;
-@property (weak, nonatomic) IBOutlet UILabel *email;
-@property (weak, nonatomic) IBOutlet UILabel *yearsEmployment;
-@property (weak, nonatomic) IBOutlet UILabel *managerEmployee;
+@property (weak, nonatomic) IBOutlet UITextField *firstNameTextfield;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameTextfield;
+@property (weak, nonatomic) IBOutlet UITextField *ageTextfield;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextfield;
 
-@property (weak, nonatomic) IBOutlet UITextField *firstNameLabel;
-@property (weak, nonatomic) IBOutlet UITextField *lastNameLabel;
-@property (weak, nonatomic) IBOutlet UITextField *ageLabel;
-@property (weak, nonatomic) IBOutlet UITextField *emailLabel;
-
-@property (weak, nonatomic) IBOutlet UITextField *yearsEmploymentLabel;
-@property (weak, nonatomic) IBOutlet UITextField *managerEmployeeLabel;
+@property (weak, nonatomic) IBOutlet UITextField *yearsEmploymentTextfield;
+@property (weak, nonatomic) IBOutlet UITextField *managerEmployeeTextfield;
 
 
 @end
@@ -32,22 +28,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)saveButtonPressed:(id)sender {
+    // Convert NSString to NSNumber for age and yearsEmployed
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *age = [formatter numberFromString: self.ageTextfield.text];
+    NSNumber *yearsEmployed = [formatter numberFromString: self.yearsEmploymentTextfield.text];
+
+    Employee *employee = [[Employee alloc]initWithFirstName:self.firstNameTextfield.text
+                                                   lastName:self.lastNameTextfield.text
+                                                        age:age
+                                                      email:self.emailTextfield.text
+                                              yearsEmployed:yearsEmployed
+                                                 andManager:self.managerEmployeeTextfield.text];
+    
+    [[EmployeeDataBase shared] add:employee];
+    [self dismissViewControllerAnimated:true completion:nil];
+    
+}
+- (IBAction)cancelButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

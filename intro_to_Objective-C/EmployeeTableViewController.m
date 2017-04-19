@@ -18,20 +18,26 @@
 
 @implementation EmployeeTableViewController
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
+
     
-    Employee *firstEmployee = [[Employee alloc] initWithFirstName:@"Cathy" lastName:@"Oun" age:@25 email:@"cathy@mac.com" yearsEmployed:@2 andManager:@"Adam"];
-    
-    Employee *secondEmployee = [[Employee alloc] initWithFirstName:@"Jesus" lastName:@"Christ" age:@25 email:@"JesusChrist@mac.com" yearsEmployed:@2 andManager:@"God"];
-    
-    Employee *thirdEmployee = [[Employee alloc] initWithFirstName:@"Xcode" lastName:@"Xman" age:@2 email:@"GonnaGiveItToYou@mac.com" yearsEmployed:@2 andManager:@"IDontKnow"];
-    
-    [[EmployeeDataBase shared] add:firstEmployee];
-    [[EmployeeDataBase shared] add:secondEmployee];
-    [[EmployeeDataBase shared] add:thirdEmployee];
+//    Employee *firstEmployee = [[Employee alloc] initWithFirstName:@"Cathy" lastName:@"Oun" age:@25 email:@"cathy@mac.com" yearsEmployed:@2 andManager:@"Adam"];
+//    
+//    Employee *secondEmployee = [[Employee alloc] initWithFirstName:@"Jesus" lastName:@"Christ" age:@25 email:@"JesusChrist@mac.com" yearsEmployed:@2 andManager:@"God"];
+//    
+//    Employee *thirdEmployee = [[Employee alloc] initWithFirstName:@"Xcode" lastName:@"Xman" age:@2 email:@"GonnaGiveItToYou@mac.com" yearsEmployed:@2 andManager:@"IDontKnow"];
+//    
+//    [[EmployeeDataBase shared] add:firstEmployee];
+//    [[EmployeeDataBase shared] add:secondEmployee];
+//    [[EmployeeDataBase shared] add:thirdEmployee];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

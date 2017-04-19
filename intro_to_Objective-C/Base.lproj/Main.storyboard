@@ -9,24 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-57" y="103"/>
-        </scene>
         <!--Employee Table View Controller-->
         <scene sceneID="EGS-hM-8QL">
             <objects>
@@ -65,7 +47,7 @@
                     <navigationItem key="navigationItem" id="iMe-3r-24e">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="Ts8-E6-P4H">
                             <connections>
-                                <segue destination="fGd-pq-nzM" kind="show" id="F2i-j1-BlD"/>
+                                <segue destination="fGd-pq-nzM" kind="presentation" id="F2i-j1-BlD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -89,6 +71,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCz-ai-hBF">
+                                <rect key="frame" x="245" y="496" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="CANCEL"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="fGd-pq-nzM" eventType="touchUpInside" id="gMl-Q5-mSu"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SGf-YU-yxa">
                                 <rect key="frame" x="251" y="131" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -174,24 +164,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAj-ar-VHw">
-                                <rect key="frame" x="164" y="496" width="46" height="30"/>
+                                <rect key="frame" x="65" y="496" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="fGd-pq-nzM" eventType="touchUpInside" id="pUS-9X-Wfe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="ageLabel" destination="YWh-sP-WDb" id="yk8-uD-MCZ"/>
-                        <outlet property="emailLabel" destination="O9W-zq-C3E" id="tId-AZ-yyX"/>
-                        <outlet property="firstName" destination="zWA-o1-hLY" id="vEE-EO-qe3"/>
-                        <outlet property="firstNameLabel" destination="SGf-YU-yxa" id="iPu-oH-1b9"/>
-                        <outlet property="lastName" destination="CkE-Cr-VPr" id="lqO-GW-SKp"/>
-                        <outlet property="lastNameLabel" destination="VkE-Ao-rGI" id="zLt-FW-fS9"/>
-                        <outlet property="managerEmployee" destination="VvH-UN-Va1" id="S0V-3q-48G"/>
-                        <outlet property="managerEmployeeLabel" destination="1nR-o5-EHR" id="fzS-dK-c6P"/>
-                        <outlet property="yearsEmployment" destination="0sx-ky-ddD" id="0Aj-cZ-dKR"/>
-                        <outlet property="yearsEmploymentLabel" destination="hJB-b5-itx" id="wkE-Vz-3oh"/>
+                        <outlet property="ageTextfield" destination="YWh-sP-WDb" id="xZr-Yu-Hva"/>
+                        <outlet property="emailTextfield" destination="O9W-zq-C3E" id="JC8-mD-DJk"/>
+                        <outlet property="firstNameTextfield" destination="SGf-YU-yxa" id="m1A-o0-ThM"/>
+                        <outlet property="lastNameTextfield" destination="VkE-Ao-rGI" id="rg8-LN-dHb"/>
+                        <outlet property="managerEmployeeTextfield" destination="1nR-o5-EHR" id="O3j-QM-Qhk"/>
+                        <outlet property="yearsEmploymentTextfield" destination="hJB-b5-itx" id="Vnc-Q9-z2T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOd-6S-wkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -214,7 +203,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ItJ-NF-jJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816.79999999999995" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1190" y="124"/>
         </scene>
     </scenes>
 </document>
