@@ -59,27 +59,34 @@
 
 -(void)add:(Employee *)employee{
     [self.employees addObject:employee];
+    [self save];
 }
 
 -(void)remove:(Employee *)employee{
     [self.employees removeObject:employee];
+    [self save];
 }
+
+
 -(void)removeEmployeeAtIndex:(int)index{
     [self.employees removeObjectAtIndex:index];
+    [self save];
+    
 }
 -(void)removeAllEmployees{
     [self.employees removeAllObjects];
+    [self save];
 }
 
 
 -(void)save{
-//    BOOL success = [NSKeyedUnarchiver archiveRootObject: self.employees toFile:self.archiveURL.path];
-//    if (success){
-//        NSLog(@"saved Employees");
-//    } else {
-//        NSLog(@"save Failed!");
-//    }
+    BOOL success = [NSKeyedArchiver archiveRootObject:self.employees toFile:[self archiveURL].path];
     
+    if (success){
+        NSLog(@"saved Employees");
+    } else {
+        NSLog(@"save Failed!");
+    }
 }
 
 //MARK: Helper Methods
