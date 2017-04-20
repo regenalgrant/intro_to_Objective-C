@@ -11,14 +11,15 @@
 #import "Employee.h"
 
 @interface EmployeeTableViewController () <UITableViewDataSource>
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation EmployeeTableViewController
 
--(void)viewDidAppear:(BOOL)animated{
+
+
+- (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self.tableView reloadData];
 }
@@ -27,8 +28,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
-
     
+    
+    
+}
+
+
+
 //    Employee *firstEmployee = [[Employee alloc] initWithFirstName:@"Cathy" lastName:@"Oun" age:@25 email:@"cathy@mac.com" yearsEmployed:@2 andManager:@"Adam"];
 //    
 //    Employee *secondEmployee = [[Employee alloc] initWithFirstName:@"Jesus" lastName:@"Christ" age:@25 email:@"JesusChrist@mac.com" yearsEmployed:@2 andManager:@"God"];
@@ -38,11 +44,29 @@
 //    [[EmployeeDataBase shared] add:firstEmployee];
 //    [[EmployeeDataBase shared] add:secondEmployee];
 //    [[EmployeeDataBase shared] add:thirdEmployee];
+
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return YES;
 }
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[EmployeeDataBase shared] removeEmployeeAtIndex:(int)indexPath.row];
+        [self.tableView reloadData];
+    }
+}
+
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EmployeeCell" forIndexPath:indexPath];
     
+
+
+
     NSArray *allEmployees = [[EmployeeDataBase shared] allEmployees];
     Employee *employee = allEmployees[indexPath.row];
     
@@ -50,6 +74,8 @@
     
     return cell;
 }
+
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     

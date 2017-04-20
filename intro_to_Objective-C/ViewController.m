@@ -19,6 +19,16 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     
+    
+//- (void)addObserver:(NSObject *)observer {
+//         forKeyPath:(NSString *)keyPath
+//            options:(NSKeyValueObservingOptions)options
+//            context:(void *)context
+//}
+
+    
+    
+    
 //    NSLog(@"AllEmployees:%@", [[[EmployeeDataBase shared]allEmployees]firstObject])managerName);
 //    
 //   Employee *newEmp = [[Employee alloc] initWithFirstName:@"Adam" lastName:@"Wallraff" andAge:@30 yearsEmployed:@3 andManager:@"Brook"];

@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		99A6D2AF1EA7CF31007B69F1 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A6D2AE1EA7CF31007B69F1 /* Queue.m */; };
 		99B3D7451EA6877200F77F3A /* EmployeeDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B3D7441EA6877200F77F3A /* EmployeeDataBase.m */; };
-		99C72DE81EA7DDC00074A2AE /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C72DE71EA7DDC00074A2AE /* Employee.m */; };
+		99C72DE81EA7DDC00074A2AE /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C72DE71EA7DDC00074A2AE /* Employee.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		99C72DEC1EA7F8F30074A2AE /* EmployeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C72DEB1EA7F8F30074A2AE /* EmployeeTableViewController.m */; };
 		99C72DEF1EA8077E0074A2AE /* AddEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C72DEE1EA8077E0074A2AE /* AddEmployeeViewController.m */; };
 		99F1C3571EA5250500CF466B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1C3561EA5250500CF466B /* main.m */; };
@@ -18,14 +17,10 @@
 		99F1C3601EA5250500CF466B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F1C35E1EA5250500CF466B /* Main.storyboard */; };
 		99F1C3621EA5250500CF466B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99F1C3611EA5250500CF466B /* Assets.xcassets */; };
 		99F1C3651EA5250500CF466B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F1C3631EA5250500CF466B /* LaunchScreen.storyboard */; };
-		99F1C36E1EA52F0100CF466B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1C36D1EA52F0100CF466B /* Person.m */; };
-		99F1C3711EA5454F00CF466B /* ViewController+Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1C3701EA5454F00CF466B /* ViewController+Identifier.m */; };
+		99F1C36E1EA52F0100CF466B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1C36D1EA52F0100CF466B /* Person.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		99A6D2AC1EA7CE56007B69F1 /* PersonQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonQueue.h; sourceTree = "<group>"; };
-		99A6D2AD1EA7CF31007B69F1 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
-		99A6D2AE1EA7CF31007B69F1 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
 		99B3D7431EA6877200F77F3A /* EmployeeDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeDataBase.h; sourceTree = "<group>"; };
 		99B3D7441EA6877200F77F3A /* EmployeeDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeDataBase.m; sourceTree = "<group>"; };
 		99C72DE61EA7DDC00074A2AE /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
@@ -46,8 +41,6 @@
 		99F1C3661EA5250500CF466B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99F1C36C1EA52F0100CF466B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		99F1C36D1EA52F0100CF466B /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		99F1C36F1EA5454F00CF466B /* ViewController+Identifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+Identifier.h"; sourceTree = "<group>"; };
-		99F1C3701EA5454F00CF466B /* ViewController+Identifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+Identifier.m"; sourceTree = "<group>"; };
 		99F1C3721EA5483F00CF466B /* ViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDataSource.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,9 +73,6 @@
 			children = (
 				99B3D7431EA6877200F77F3A /* EmployeeDataBase.h */,
 				99B3D7441EA6877200F77F3A /* EmployeeDataBase.m */,
-				99A6D2AC1EA7CE56007B69F1 /* PersonQueue.h */,
-				99A6D2AD1EA7CF31007B69F1 /* Queue.h */,
-				99A6D2AE1EA7CF31007B69F1 /* Queue.m */,
 				99C72DE61EA7DDC00074A2AE /* Employee.h */,
 				99C72DE71EA7DDC00074A2AE /* Employee.m */,
 				99F1C36C1EA52F0100CF466B /* Person.h */,
@@ -94,8 +84,6 @@
 		99B3D7481EA68AF800F77F3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				99F1C36F1EA5454F00CF466B /* ViewController+Identifier.h */,
-				99F1C3701EA5454F00CF466B /* ViewController+Identifier.m */,
 				99F1C3721EA5483F00CF466B /* ViewControllerDataSource.h */,
 			);
 			name = Views;
@@ -225,8 +213,6 @@
 				99F1C35D1EA5250500CF466B /* ViewController.m in Sources */,
 				99F1C35A1EA5250500CF466B /* AppDelegate.m in Sources */,
 				99C72DEF1EA8077E0074A2AE /* AddEmployeeViewController.m in Sources */,
-				99F1C3711EA5454F00CF466B /* ViewController+Identifier.m in Sources */,
-				99A6D2AF1EA7CF31007B69F1 /* Queue.m in Sources */,
 				99F1C36E1EA52F0100CF466B /* Person.m in Sources */,
 				99C72DEC1EA7F8F30074A2AE /* EmployeeTableViewController.m in Sources */,
 				99C72DE81EA7DDC00074A2AE /* Employee.m in Sources */,
