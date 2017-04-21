@@ -24,20 +24,23 @@
                             <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="office space" translatesAutoresizingMaskIntoConstraints="NO" id="uNN-1n-DGI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="31" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbB-5x-yk3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EmployeeCell" rowHeight="31" id="nVV-4Q-HBJ">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.55000000000000004" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EmployeeCell" rowHeight="31" id="nVV-4Q-HBJ">
                                         <rect key="frame" x="0.0" y="28" width="375" height="31"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nVV-4Q-HBJ" id="jfh-3a-XKl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="center" tableViewCell="nVV-4Q-HBJ" id="jfh-3a-XKl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="30.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -46,8 +49,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ujZ-si-8by" firstAttribute="top" secondItem="zbB-5x-yk3" secondAttribute="bottom" id="YNQ-Zb-M6x"/>
-                            <constraint firstItem="zbB-5x-yk3" firstAttribute="top" secondItem="SOB-wa-4AA" secondAttribute="bottom" constant="-64" id="gwm-rw-j8q"/>
+                            <constraint firstItem="ujZ-si-8by" firstAttribute="top" secondItem="zbB-5x-yk3" secondAttribute="bottom" constant="-64" id="YNQ-Zb-M6x"/>
+                            <constraint firstItem="zbB-5x-yk3" firstAttribute="top" secondItem="SOB-wa-4AA" secondAttribute="bottom" id="gwm-rw-j8q"/>
                             <constraint firstItem="zbB-5x-yk3" firstAttribute="leading" secondItem="tdO-ZB-b4D" secondAttribute="leading" id="ksW-d8-InF"/>
                             <constraint firstAttribute="trailing" secondItem="zbB-5x-yk3" secondAttribute="trailing" id="wGe-d6-Rlq"/>
                         </constraints>
