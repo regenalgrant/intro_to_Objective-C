@@ -22,11 +22,11 @@
     [super viewDidLoad];
     
     
-- (void)addObserver:(NSObject *)observer {
-         forKeyPath:(NSString *)keyPath
-            options:(NSKeyValueObservingOptions)options
-            context:(void *)context
-}
+//- (void)addObserver:(NSObject *)observer {
+//         forKeyPath:(NSString *)keyPath
+//            options:(NSKeyValueObservingOptions)options
+//            context:(void *)context
+//}
 
     
     
