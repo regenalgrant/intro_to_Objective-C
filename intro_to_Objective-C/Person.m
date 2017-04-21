@@ -15,9 +15,18 @@
                            andAge:(NSNumber *)age{
     self = [super init];
     if (self){
+        
+        //retain is used at the bottom of the code(page)//
+        
         _firstName = firstName;
         _lastName = lastName;
         _age = age;
+        
+        //do not need retained//
+        
+//        _firstName = [firstName retain];
+//        _lastName = [lastName retain];
+//        _age = [age retain];
         
     }
     return self;
@@ -60,7 +69,12 @@
     return person;
 
 }
-
+-(void)dealloc{
+    [_firstName release];
+    [_lastName release];
+    [_age release];
+    [super dealloc];
+}
 @end
 
 
