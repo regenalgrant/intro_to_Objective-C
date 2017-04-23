@@ -28,26 +28,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
 }
 
 - (IBAction)saveButtonPressed:(id)sender {
     // Convert NSString to NSNumber for age and yearsEmployed
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    NSNumber *age = [formatter numberFromString: self.ageTextfield.text];
-    NSNumber *yearsEmployed = [formatter numberFromString: self.yearsEmploymentTextfield.text];
+    formatter.numberStyle        = NSNumberFormatterDecimalStyle;
+    NSNumber *age                = [formatter numberFromString: self.ageTextfield.text];
+    NSNumber *yearsEmployed      = [formatter numberFromString: self.yearsEmploymentTextfield.text];
 
-    Employee *employee = [[Employee alloc]initWithFirstName:self.firstNameTextfield.text
+    Employee *employee           = [[Employee alloc]initWithFirstName:self.firstNameTextfield.text
                                                    lastName:self.lastNameTextfield.text
                                                         age:age
                                                       email:self.emailTextfield.text
                                               yearsEmployed:yearsEmployed
                                                  andManager:self.managerEmployeeTextfield.text];
-    
+
     [[EmployeeDataBase shared] add:employee];
     [self dismissViewControllerAnimated:true completion:nil];
-    
+
 }
 - (IBAction)cancelButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
