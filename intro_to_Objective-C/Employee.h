@@ -12,9 +12,9 @@
 
 @interface Employee : Person <NSCopying, NSCoding>
 
-@property(strong, nonatomic) NSNumber *employeeNumber, *yearsEmployed;
-@property(strong, nonatomic) NSString *managerName;
-@property(strong, nonatomic) NSString *email;
+@property (strong, nonatomic) NSNumber       *employeeNumber, *yearsEmployed;
+@property (strong, nonatomic) NSString       *managerName;
+@property (strong, nonatomic) NSString       *email;
 
 
 -(instancetype)initWithFirstName:(NSString *)firstName

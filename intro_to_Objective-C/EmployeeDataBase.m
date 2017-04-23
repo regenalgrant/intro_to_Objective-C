@@ -23,22 +23,22 @@
     //must "nil" out or have memory leak a previous shared
     //Singleton in Objective C
     static EmployeeDataBase *shared = nil;
-    
+
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shared = [[[self class] alloc]init];
+    shared                          = [[[self class] alloc]init];
     });
-    
+
     return shared;
-    
+
 }
 
 -(instancetype)init{
-    self = [super init];
+    self                            = [super init];
     if (self) {
-        _employees = [NSKeyedUnarchiver unarchiveObjectWithData:[NSData dataWithContentsOfURL:self.archiveURL]];
+    _employees                      = [NSKeyedUnarchiver unarchiveObjectWithData:[NSData dataWithContentsOfURL:self.archiveURL]];
         if (!_employees){
-            _employees = [[NSMutableArray alloc]init];
+    _employees                      = [[NSMutableArray alloc]init];
         }
     }
     return self;
@@ -59,36 +59,49 @@
 
 -(void)add:(Employee *)employee{
     [self.employees addObject:employee];
+    [self save];
 }
 
 -(void)remove:(Employee *)employee{
     [self.employees removeObject:employee];
+    [self save];
 }
+
+
 -(void)removeEmployeeAtIndex:(int)index{
     [self.employees removeObjectAtIndex:index];
+    [self save];
+
 }
 -(void)removeAllEmployees{
     [self.employees removeAllObjects];
+    [self save];
 }
 
 
 -(void)save{
-//    BOOL success = [NSKeyedUnarchiver archiveRootObject: self.employees toFile:self.archiveURL.path];
-//    if (success){
-//        NSLog(@"saved Employees");
-//    } else {
-//        NSLog(@"save Failed!");
-//    }
-    
+    [self willChangeValueForKey:@"employees"];
+    BOOL success                    = [NSKeyedArchiver archiveRootObject:self.employees toFile:[self archiveURL].path];
+
+    if (success){
+        NSLog(@"saved Employees");
+    } else {
+        NSLog(@"save Failed!");
+    }
+    [self didChangeValueForKey:@"employees"];
+}
+
++ (BOOL)automaticallyNotifiesObserversOfEmployees{
+    return NO;
 }
 
 //MARK: Helper Methods
 -(NSURL *)documentDirectory {
-    NSURL *documentDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:
+    NSURL *documentDirectoryURL     = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:
                                     NSUserDomainMask] firstObject];
-    
+
     return documentDirectoryURL;
-    
+
 }
 
 -(NSURL *)archiveURL {

@@ -18,36 +18,36 @@
                    yearsEmployed:(NSNumber *)yearsEmployed
                       andManager:(NSString *)managerName;
 {
-                          
-    self = [super initWithFirstName:firstName lastName:lastName andAge:age];
-                        
+
+    self                    = [super initWithFirstName:firstName lastName:lastName andAge:age];
+
     if(self){
-        _yearsEmployed = yearsEmployed;
-        _managerName = managerName;
-        _email = email;
-        _employeeNumber = [NSNumber numberWithInt:arc4random_uniform(100)];
+    _yearsEmployed          = [yearsEmployed retain];
+    _managerName            = [managerName retain];
+    _email                  = [email retain];
+    _employeeNumber         = [NSNumber numberWithInt:arc4random_uniform(100)];
     }
-    
+
     return self;
-    
+
 }
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
-    
-    self = [super init];
-    
+
+    self                    = [super init];
+
     if (self){
-        
-        self.firstName = [aDecoder decodeObjectForKey:@"firstName"];
-        self.lastName = [aDecoder decodeObjectForKey:@"lastName"];
-        self.age = [aDecoder decodeObjectForKey:@"age"];
-        self.yearsEmployed = [aDecoder decodeObjectForKey:@"yearsEmployed"];
-        self.managerName = [aDecoder decodeObjectForKey:@"managerName"];
-        self.employeeNumber = [aDecoder decodeObjectForKey:@"employeeNumber"];
-        self.email = [aDecoder decodeObjectForKey:@"email"];
-        
+
+    self.firstName          = [aDecoder decodeObjectForKey:@"firstName"];
+    self.lastName           = [aDecoder decodeObjectForKey:@"lastName"];
+    self.age                = [aDecoder decodeObjectForKey:@"age"];
+    self.yearsEmployed      = [aDecoder decodeObjectForKey:@"yearsEmployed"];
+    self.managerName        = [aDecoder decodeObjectForKey:@"managerName"];
+    self.employeeNumber     = [aDecoder decodeObjectForKey:@"employeeNumber"];
+    self.email              = [aDecoder decodeObjectForKey:@"email"];
+
     }
-    
+
     return self;
 }
 
@@ -61,13 +61,49 @@
 }
 
 
+-(void)setEmail:(NSString *)email
+{
+    if (_email != email)
+        [email retain];
+        [_email release];
+    _email                  = email;
+
+}
+
+-(void)setManagerName:(NSString *)managerName
+{
+    if (_managerName != managerName)
+        [managerName retain];
+        [_managerName release];
+    _managerName            = managerName;
+}
+
+-(void)setYearsEmployed:(NSNumber *)yearsEmployed
+{
+    if (_yearsEmployed != yearsEmployed)
+    [yearsEmployed retain];
+    [_yearsEmployed release];
+    _yearsEmployed          = yearsEmployed;
+}
+
+-(void)setEmployeeNumber:(NSNumber *)employeeNumber
+{
+    if (_employeeNumber != employeeNumber)
+        [employeeNumber retain];
+    [_employeeNumber release];
+    _employeeNumber         = employeeNumber;
+}
+
+
+
+
 -(id)copyWithZone:(NSZone *)zone{
-    Employee *employee = [super copyWithZone:zone];
-    
+    Employee *employee      = [super copyWithZone:zone];
+
     employee.employeeNumber = self.employeeNumber;
-    employee.managerName = self.managerName;
-    employee.yearsEmployed = self.yearsEmployed;
-    
+    employee.managerName    = self.managerName;
+    employee.yearsEmployed  = self.yearsEmployed;
+
     return employee;
 }
 

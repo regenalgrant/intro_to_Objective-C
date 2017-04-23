@@ -10,8 +10,8 @@
 
 @interface Person : NSObject<NSCopying>
 
-@property(strong, nonatomic) NSString *firstName, *lastName;
-@property(strong, nonatomic) NSNumber *age;
+@property (retain, nonatomic) NSString *firstName, *lastName;
+@property (retain, nonatomic) NSNumber  *age;
 
 
 -(instancetype)initWithFirstName:(NSString *)firstName
